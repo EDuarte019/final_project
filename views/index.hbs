@@ -1,9 +1,43 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<link rel="stylesheet" href="../css/style.css">
+<div class="color">
+    <body>
+  <h2>Personal Profile:</h2>
+  <p id="me">Self-motivated, Hardworking first year Coding student who is able to communicate and able to learn
+    quickly.
+    Seeking the position of Web Developer.
+  </p>
+  <img id="pic" src="pic.jpg" width="400" height="400" alt="Professional Image">
+  <section class="right">
+    <p>Hello! I am a student in West-Mec and Copper Canyon High School. From adolescence, my main priority has been
+      school. I've dedicated an extraordinary amount of time to school and making an effort to do the best I can in my
+      academics and be the best person I could be, within.</p>
+    <p>I was born in San Francisco, California but grew up in Phoenix, Arizona. As I transitioned into my teenage
+      years,
+      I began to get into cheerleading for my middle school, WestWind Elementary. Along with cheerleading, I got into
+      the track team. In fact, I did cheerleading and track for two years. </p>
+  </section>
+  <p id="contact"> Contact Me! | C: <a href="tel:16238500894">623.850.0894</a> | E:
+    <a href="mailto:EvelynDuarte793@yahoo.com">EvelynDuarte793@yahoo.com</a></p>
+</body>
+
+<div id="center">
+    <h1>{{title}}</h1>
+<h2>{{name}}</h2>
 <div>
     {{#each data}}
         {{this.name}}
-        {{this.url}}
+        {{this.object}}
     {{/each}}
+</div>
+<h3>Person: </h3>
+    {{ username }}
+    <br>
+    Height: {{ height }} cm
+    <br>
+    Mass: {{ mass }} kg
+    <br>
+    Gender: {{ gender }}
+
+</div>
 </div>
 

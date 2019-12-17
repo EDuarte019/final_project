@@ -6,19 +6,39 @@ const fetch = require('node-fetch');
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   try {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon")
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon");
     const data = await response.json();
     monster = data.results[0].name
     const [...monsters] = data.results;
-    // .then(res=>res.json())
-    // .then(data => console.log(data))
-    // jokeData = await jokeResponse.json();
+  
     
     console.log(monsters);
     res.render('index', 
     { 
-      title: 'Home',
+      title: 'Evelyn Duarte',
+      name: "Name of Pokemons",
       data: monsters
+    }
+    );
+    
+  } catch (error) {
+    console.log(error);
+  }
+});
+router.get('/star', async function(req, res, next) {
+  try {
+    const response = await fetch("https://swapi.co/api/people")
+    const data = await response.json();
+    star = data.results[1].name;
+    const [...star] = data.results;
+    console.log(data);
+   
+    
+    console.log(star);
+    res.render('index', 
+    { 
+      title: 'Home',
+      data: star
     }
     );
     
@@ -30,10 +50,10 @@ router.get('/', async function(req, res, next) {
 });
 router.get('/', async function(req, res, next) {
   try {
-    const response = await fetch("https://swapi.co/api/people/1")
-    const datas = await response.json();
-    star = datas.results[1].name
-    const [...star] = data.results;
+    const response = await fetch("https://ronreiter-meme-generator.p.rapidapi.com/meme")
+    const datass = await response.json();
+    meme = datass.results[1].name;
+    const [...meme] = data.results;
     // .then(res=>res.json())
     // .then(data => console.log(data))
     // jokeData = await jokeResponse.json();
@@ -52,6 +72,13 @@ router.get('/', async function(req, res, next) {
   
 
 });
+
+
+// req.end(function (res) {
+// 	if (res.error) throw new Error(res.error);
+
+// 	console.log(res.body);
+// });
 
 router.get('/:id', (req, res) => {
   // req.params.id
